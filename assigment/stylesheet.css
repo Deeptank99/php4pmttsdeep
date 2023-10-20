@@ -1,0 +1,66 @@
+ body{
+    background-color:lightgray;
+ }
+ 
+ 
+ 
+ 
+ .heading {
+     background-color: lightgray;
+     width: 100%;
+     color: black;
+     padding: 2%;
+     text-align: center;
+    
+ }
+ 
+ #box {
+     width: 50%;
+     margin: auto;
+     background-color: gray;
+     border: solid;
+     padding: 1%;
+ }
+ 
+ .hname {
+     text-align: left;
+     font-size: 30px;
+ }
+ 
+ .row {
+     font-size: 30px;
+     border: solid;
+     background-color: lightgray;
+     margin-left: 1px;
+ }
+ 
+ .row input {
+     width: 70%;
+     font-size: 20px;
+     margin-bottom: 5px;
+     margin-left: 7px;
+     text-align: center;
+ }
+ 
+ .button{
+    width:100%;
+    background-color: lightgray;
+    border:solid;
+    font-size:30px;
+     
+ }
+ .button label{
+    text-align: left;
+    font-size: 30px;
+}
+.bt{
+    text-align: center;
+}
+
+ .bt input{
+    width:200px;
+    padding:5px;
+    font-size:20px;
+    
+
+ }
