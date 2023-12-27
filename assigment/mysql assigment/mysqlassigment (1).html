@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        body {
+            background-color: lightgrey;
+        }
+
+        .answer {
+            font-size: 23px;
+
+        }
+
+        .question {
+            font-size: 35px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1> MY SQL ASSIGMENT </h1>
+    <h2><mark style="background-color:aqua">TASK 1:</mark></h2>
+    <br><br>
+    <h3 class="question"><mark>database and table create qurrey:</mark></h3>
+    <h4 class="answer">database:CREATE DATABASE company:
+        create employee table:
+
+        CREATE TABLE Employee
+        (EM_ID INT AUTO_INCREMENT PRIMARY KEY,
+        full_name varchar(255),
+        LAST_name varchar(255),
+        salary int,
+        joining_date varchar(255),
+        department varchar(255)
+        )
+        <br><br>
+        insert raw in tables
+        INSERT into employee VALUES
+        ('null','john','abraham','1000000','2013-01-01','banking'),
+        ('null','michael','clerk','800000','2013-01-01','insurance'),
+        ('null','roy','thomas','700000','2013-02-01','banking'),
+        ('null','tom','jose','600000','2013-02-01','insurance'),
+        ('null','jerry','pinto','650000','2013-01-01','insurance'),
+        ('null','philip','mathew','750000','2013-01-01','services'),
+        ('null','testname1','123','650000','2013-01-01','services'),
+        ('null','testname2','lname%','600000','2013-02-01','insurance');
+
+        <br><br>
+        table 2
+        CREATE TABLE Incentives(
+        Incentives_id int AUTO_INCREMENT primary key,
+        employee_ref_id int,
+        incentive_date int,
+        intcentive_amt int
+        )
+        INSERT INTO incentives
+        VALUES('null','1','2013-02-01','5000'),('null','2','2013-02-01','3000'),('null','3','2013-02-01','4000'),('null','1','2013-01-01','4500'),('null','2','2013-01-01','3500')
+    </h4>
+
+    <h3 class="question"><mark> a) First_Name from employee table using alias name “Employee
+            Name”.</mark></h3>
+    <h4 class="answer">qurrey:SELECT FIRST_NAME “EMPLOYEE NAME” FROM employe; </h4>
+    <h3 class="question"><mark> b) Get FIRST_NAME, Joining year, Joining Month and Joining Date
+            from employee table.</mark></h3>
+    <h4 class="answer">qurrey:SELECT FIRST_NAME
+        ,year(JOINING_DATE),month(JOINING_DATE),day(JOINING_DATE) FROM employe; </h4>
+    <h3 class="question"><mark> C)Get all employee details from the employee table order by
+            First Name Ascending
+            And Salary descending?</mark></h3>
+    <h4 class="answer">qurrey:>SELECT *FROM employe ORDER BY First_NAME ASC;</h4>
+    <h3 class="question"><mark> d)Get employee details from employee table whose first name
+            contains „o ‟.</mark></h3>
+    <h4 class="answer">qurrey:>SELECT *FROM employe WHERE First_NAME LIKE '%o%'</h4>
+    <h3 class="question"><mark>e)Get employee details from employee table whose joining month is
+            “January”</mark></h3>
+    <h4 class="answer">qurrey:>SELECT * FROM employe WHERE
+        monthname(JOINING_DATE)='january';</h4>
+    <h3 class="question"><mark>f)Get department, total salary with respect to a department from
+            employee table Order By total salary descending.</mark></h3>
+    <h4 class="answer">)qurrey:SELECT DEPARMENT,sum(SALARY) FROM employe group by DEPARMENT
+        order by sum(SALARY) desc;</h4>
+    <h3 class="question"><mark>g)Get department wise maximum salary from employee table order by
+            salary ascending? </mark></h3>
+    <h4 class="answer">qurrey:select DEPARMENT,max(SALARY) from employe group by DEPARMENT order
+        by max(SALARY) asc;</h4>
+    <h3 class="question"><mark>h)Select first_name, incentive amount from employee and
+            incentives
+            table for those
+            Employees who have incentives and incentive amount greater than 3000 </mark></h3>
+    <h4 class="answer">SELECT FIRST_NAME,INCENTIVE_AMT from employe join incentives on
+        employe.em_id=incentives.
+        EMPLOYE_REF_ID where INCENTIVE_AMT>3000;</h4>
+    <h3 class="question"><mark>i) Select 2nd Highest salary from employee table</mark></h3>
+    <h4 class="answer">qurrey:SELECT max(SALARY) from employe where SALARY<(SELECT MAX(SALARY) from employe);</h4>
+            <h3 class="question"><mark>j) Select first_name, incentive amount from employee and
+                    incentives table for all
+                    Employees who got incentives using left join.</mark></h3>
+            <h4 class="answer">qurrey:select first_name,incentive_amt from employee left join incentives
+                on employee.em_id=incentives.
+                employee_ref_id;</h4>
+
+            <br><br>
+            <h2><mark style="background-color:aqua">TASK 2:</mark></h2>
+
+            <h4 class="answer"> CREATE DATABASE taks2
+
+                create database:CREATE DATABASE sale;
+                <br> <br>
+                CREATE TABLE salses_peson
+                (sno INT AUTO_INCREMENT PRIMARY KEY,
+                sname varchar(255),
+                city varchar(255),
+                comm varchar(255)
+                )
+
+                <br> <br>
+
+                INSERT INTO salses_peson VALUES
+                ('1001','PEEL','LONDON','0.12'),
+                ('1002','SERRES','SAN JOSE','0.13'),
+                ('1003','AXELROD','NEWYORK','0.1'),
+                ('1004','MOTIKA','LONDON','0.11'),
+                ('1007','RAFKIN','BARCELONA','0.15');
+                <br> <br>
+                CREATE TABLE NO 2:
+                CREATE TABLE CUSTOMER(
+                CNM INT AUTO_INCREMENT PRIMARY KEY,
+                CNAME VARCHAR(255),
+                city VARCHAR(255),
+                RATING INT,
+                SNO INT )
+                <br> <br>
+                INSERT INTO customer
+                VALUES('201','HOFFMAN','LONDON','100','1001'),('202','GIOVANNE','ROME','200','1003'),('203','LIU','SANJOSE','300','1002'),('204','GRASS','BARCELONA','100','1002'),('206','CLEMENS','LONDON','300','1007'),('207','PEREIRA','ROME','100','1004');
+                <br> <br>
+                create no 3
+                CREATE TABLE ORDERS
+                (ONM INT AUTO_INCREMENT PRIMARY KEY,
+                amt varchaR(255),
+                ode vaRchaR(255),
+                cnm int,
+                sno int
+                )
+                <br> <br>
+                INSERT into orders values(
+                ('3001','18.69','1994-10-03','201','1007'),
+                ('3002','1900.1','1994-10-03','207','1004'),
+                ('3003','767.19','1994-10-03','201','1001'),
+                ('3005','3005','1994-10-03','203','1002'),
+                ('3006','3006','1994-10-04','201','1007'),
+                ('3007','3007','1994-10-05','204','1002'),
+                ('3008','3008','1994-10-05','206','1001'),
+                ('3009','3009','1994-10-04','202','1003'),
+                ('3010','3010','1994-10-06','204','1002'),
+                ('3011','3011','1994-10-06','206','1001');
+            </h4>
+            <br><br>
+            <h3 class="question"><mark> a) All orders for more than $1000.</mark></h3>
+            <h4 class="answer">SELECT *FROM orders WHERE AMT>1000;</h4>
+            <h3 class="question"><mark>b) Names and cities of all salespeople in London with commission
+                    above 0.10. </mark></h3>
+            <h4 class="answer"> SELECT SNAME,CITY FROM saleperson WHERE CITY = 'london' AND COMM > 0.10;
+            </h4>
+            <h3 class="question"><mark>c) All salespeople either in Barcelona or in London. <mark></h3>
+            <h4 class="answer">SELECT SNAME,CITY FROM saleperson WHERE CITY IN
+                ('LONDON','BARCELONA');</h4>
+            <h3 class="question"><mark>d) All salespeople with commission between 0.10 and 0.12.
+                    (Boundary values should
+                    be excluded). <mark></h3>
+            <h4 class="answer">select sname,COMM from saleperson where COMM BETWEEN 0.1
+                and 0.12;</h4>
+            <h3 class="question"><mark>e) All customers with NULL values in city
+                    column.<mark></h3>
+            <h4 class="answer">SELECT customer.*, CITYNAME FROM customer RIGHT
+                JOIN saleperson ON customer.SNO=saleperson.SNO where CITYNAME is
+                null;
+            </h4>
+            <h3 class="question"><mark>f) All orders taken on Oct 3Rd and Oct
+                    4th 1994. <mark></h3>
+            <h4 class="answer"> SELECT * FROM orders WHERE ODE BETWEEN
+                '1994-10-03' AND '1994-10-04';</h4>
+            <h3 class="question"><mark>g) All customers serviced by peel
+                    or Motika. <mark></h3>
+            <h4 class="answer">select CNAME,SNAME from customer
+                join saleperson on customer.SNO=saleperson.SNO
+                where SNAME in ('PEEL','MOTIKA');</h4>
+            <h3 class="question"><mark>h) All customers whose
+                    names begin with a letter from A to
+                    B<mark></h3>
+            <h4 class="answer">SELECT *FROM customer
+                WHERE CNAME LIKE 'A%' OR CNAME LIKE
+                'B%'; </h4>
+            <h3 class="question"><mark>i) All customers
+                    excluding those with rating <= 100 unless they are located in Rome.<mark>
+            </h3>
+            <h4 class="answer">SELECT *FROM
+                customer WHERE RATING<=100 OR CITY='ROME' ;</h4>
+                    <h3 class="question"><mark> j) All
+                            orders except those with 0
+                            or NULL value in amt
+                            field<mark></h3>
+                    <h4 class="answer"> SELECT
+                        *FROM orders WHERE
+                        AMT!=0 or AMT IS NOT
+                        null;</h4>
+                    <h3 class="question"><mark>
+                            k) Count the number
+                            of salespeople
+                            currently listing
+                            orders in the order
+                            table<mark></h3>
+                    <h4 class="answer">
+                        SELECT
+                        COUNT(DISTINCT
+                        SNO) FROM
+                        saleperson;</h4>
+</body>
+
+</html>
